@@ -1,0 +1,51 @@
+[project]
+name = "sample"
+version = "0.1.0"
+description = "Short one-liner explaining what this project does."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Soroush" }]
+dependencies = [
+  "typer>=0.12",
+  "pydantic>=2.7",
+  "rich>=13",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "pytest-cov>=5",
+  "mypy>=1.10",
+  "ruff>=0.5",
+  "black>=24.3",
+  "pre-commit>=3.7",
+  "pip-audit>=2.7",
+  "types-requests",
+]
+
+[project.scripts]
+your-project = "your_project.cli:run"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-select = ["I"]  # import sorter
+
+[tool.black]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+warn_unused_ignores = true
+mypy_path = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=src --cov-report=term-missing"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
