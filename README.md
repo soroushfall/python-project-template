@@ -1,12 +1,9 @@
-# your-project
+# python-project-template
+template for small python projects
 
-Short description.
 
-## Quickstart
-
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"
-pre-commit install
-pytest
-your-project --help
+# Set up virtual environment
+cd python-project-template
+python -m venv .venv
+source .venv/bin/activate   # Linux/macOS
+.venv\Scripts\activate      # Windows
