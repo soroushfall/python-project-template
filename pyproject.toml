@@ -30,7 +30,10 @@ your-project = "your_project.cli:run"
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+[tool.ruff.lint]
 extend-select = ["I"]  # import sorter
+
 
 [tool.black]
 line-length = 100
