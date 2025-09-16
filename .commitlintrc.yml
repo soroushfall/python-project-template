@@ -1,0 +1,7 @@
+extends: ["@commitlint/config-conventional"]
+
+rules:
+  header-match-regex:
+    - 2
+    - always
+    - "^(feat|fix|chore|docs|style|refactor|perf|test|ci|build|revert)(\([\w\-]+\))?: .{1,50}$"
