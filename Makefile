@@ -2,9 +2,6 @@ install:
 	python -m pip install --upgrade pip setuptools wheel
 	python -m pip install -e ".[dev]"
 
-precommit:
-	pre-commit install
-
 lint:
 	ruff check .
 	black --check .
@@ -16,7 +13,7 @@ typecheck:
 test:
 	pytest
 
-fmt:
+format:
 	black .
 	ruff check --fix .
 
